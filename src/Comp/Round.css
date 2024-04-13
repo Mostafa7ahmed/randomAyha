@@ -1,0 +1,379 @@
+/* Spotify music card made by: csozi | Website: www.csozi.hu*/
+* {
+    margin: 0;
+    box-sizing: border-box;
+    padding: 0;
+
+}
+
+body {
+    height: 100vh;
+    background-color: #cbdfcb6c;
+}
+
+.container {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+
+    gap: 30px;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    top: 50%;
+    left: 50%;
+    height: auto;
+
+
+}
+
+.card {
+    padding: 10px;
+    min-width: 350px;
+    min-height: 60px;
+    background: #191414;
+    border-radius: 10px;
+    padding: .8rem;
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+    box-shadow: 0 10px 40px -25px rgba(100, 100, 100, .5);
+    padding-bottom: 20px;
+
+}
+
+.title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    position: relative;
+
+    margin: 20px 0;
+}
+
+.titlep {
+    color: #ffffff;
+    position: relative;
+
+    font-size: 40px;
+    font-weight: 900;
+    font-family: serif;
+
+}
+
+.titlep::after {
+    content: "";
+    position: absolute;
+    bottom: -10px;
+    right: 6px;
+
+    width: 60px;
+    height: 2px;
+    color: #1db954;
+    background-color: #00a87ead;
+}
+
+.titlep::before {
+    content: "";
+    position: absolute;
+    top: -10px;
+
+    width: 60px;
+    height: 2px;
+    color: #1db954;
+    background-color: #00a87ead;
+}
+
+
+.top {
+    position: relative;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-block-end: .5rem;
+}
+
+.pfp {
+    position: relative;
+    height: 40px;
+    width: 40px;
+    background-color: white;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.title-1 {
+    color: white;
+    font-size: 1.25rem;
+    font-weight: 900;
+}
+
+.title-2 {
+    color: white;
+    font-size: .75rem;
+    margin: 6px 0;
+}
+
+.title-2 .title-span {
+    padding: 2px 5px;
+    background: #00a87ead;
+    width: auto;
+    border-radius: 5px;
+    color: white;
+    font-size: 12px;
+    margin: 0 5px;
+    font-weight: 600;
+}
+
+.text {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 20px;
+    background-color: #d5f1d56c;
+    color: #ffffff;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    border-radius: 10px;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.text p {
+    text-align: center;
+    width: 70%;
+    font-weight: bolder;
+    font-size: 26px;
+}
+
+/* new */
+.song-time {
+    width: 100%;
+    margin-inline: auto;
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: .3rem;
+}
+
+.time {
+    width: 90%;
+    background-color: #5e5e5e;
+    height: .35rem;
+    border-radius: 3px;
+}
+
+.elapsed {
+    width: 42%;
+    background-color: #1db954;
+    height: 100%;
+    border-radius: 3px;
+}
+
+.controls {
+    color: white;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 100%;
+}
+
+.volume {
+    height: 100%;
+    width: 48px;
+}
+
+.air {
+    height: 100%;
+    width: 48px;
+}
+
+.controls svg {
+    cursor: pointer;
+    transition: 0.1s;
+}
+
+.controls svg:hover {
+    color: #00a87ead;
+}
+
+.controls .heart:active {
+    color: #00a87ead;
+}
+
+.volume {
+    opacity: 0;
+    position: relative;
+    transition: 0.2s;
+}
+
+.volume .slider {
+    height: 4px;
+    background-color: #5e5e5e;
+    width: 80%;
+    border-radius: 2px;
+    margin-left: .3rem;
+}
+
+.volume .slider .green {
+    background-color: #1db954;
+    height: 100%;
+    width: 80%;
+    border-radius: 3px;
+}
+
+.volume .circle {
+    background-color: white;
+    height: 6px;
+    width: 6px;
+    border-radius: 3px;
+    position: absolute;
+    right: 20%;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.volume_button:hover~.volume {
+    opacity: 1;
+}
+
+.timetext {
+    color: white;
+}
+
+.time_now {
+    font-size: .8rem;
+    background-color: #00000060;
+    padding: .5rem;
+    border-radius: .5rem;
+    background-blend-mode: multiply;
+}
+
+.time_full {
+    font-size: .8rem;
+    background-color: #00000060;
+    padding: .5rem;
+    border-radius: .5rem;
+    background-blend-mode: multiply;
+}
+
+.playing {
+    display: flex;
+    position: relative;
+    justify-content: center;
+    gap: 1px;
+    width: 30px;
+    height: 20px;
+}
+
+.greenline {
+    background-color: #1db954;
+    height: 20px;
+    width: 2px;
+    position: relative;
+    transform-origin: bottom;
+}
+
+.line-1 {
+    animation: infinite playing 1s ease-in-out;
+    animation-delay: 0.2s;
+}
+
+.line-2 {
+    animation: infinite playing 1s ease-in-out;
+    animation-delay: 0.5s;
+}
+
+.line-3 {
+    animation: infinite playing 1s ease-in-out;
+    animation-delay: 0.6s;
+}
+
+.line-4 {
+    animation: infinite playing 1s ease-in-out;
+    animation-delay: 0s;
+}
+
+.line-5 {
+    animation: infinite playing 1s ease-in-out;
+    animation-delay: 0.4s;
+}
+
+@keyframes playing {
+    0% {
+        transform: scaleY(0.1);
+    }
+
+    33% {
+        transform: scaleY(0.6);
+    }
+
+    66% {
+        transform: scaleY(0.9);
+    }
+
+    100% {
+        transform: scaleY(0.1);
+    }
+}
+
+.button {
+    --color: #00a87ead;
+    padding: 0.8em 1.7em;
+    background-color: transparent;
+    border-radius: .3em;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    transition: .5s;
+    font-weight: 400;
+    font-size: 17px;
+    border: 1px solid;
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: var(--color);
+    z-index: 1;
+}
+
+.button::before,
+.button::after {
+    content: '';
+    display: block;
+    width: 50px;
+    height: 50px;
+    transform: translate(-50%, -50%);
+
+    position: absolute;
+    border-radius: 50%;
+    z-index: -1;
+    background-color: var(--color);
+    transition: 1s ease;
+}
+
+.button::before {
+    top: -1em;
+    left: -1em;
+}
+
+.button::after {
+    left: calc(100% + 1em);
+    top: calc(100% + 1em);
+}
+
+.button:hover::before,
+.button:hover::after {
+    height: 410px;
+    width: 410px;
+}
+
+.button:hover {
+    color: rgb(211, 213, 214);
+}
+
+.button:active {
+    filter: brightness(.8);
+}
